@@ -1,24 +1,19 @@
 OKA (Okul Kütüphane Arşivi) Sürüm Notları ve Sistem Özellikleri
-================================================================================
-
-SÜRÜM: v4.4
+SÜRÜM: v4.5
 TARİH: Haziran 2026
 
-1. v4.4 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER
---------------------------------------------------------------------------------
-• Seri Barkod Okuma ve Otomatik Veri Çekme Modülü: Kütüphane envanterine yeni eklenecek kitapların barkodları okutulduğunda; kitap adı, yazar, yayınevi ve sayfa sayısı bilgileri entegre API'ler (Google Books, Open Library) aracılığıyla internet üzerinden otomatik olarak çekilerek form alanlarına doldurulur.
-• Gelişmiş Barkod Yazdırma Motoru: Kullanıcılara "Sadece Seçili Kitaplar" veya "Tüm Envanter" seçenekleri sunulmuştur. Çıktı formatı olarak "Standart A4 Yazıcı" (çoklu sütun) ve "Termal Barkod Makinesi" (tekli etiket) seçenekleri eklenmiş, etiket boyutlarının (En x Boy mm) kullanıcı tarafından milimetrik olarak belirlenmesi sağlanmıştır.
-• Akıllı Stok Otomasyonu: Seri ekleme modunda, sistemde var olan veya art arda okutulan aynı barkodlara ait yayınların stok sayıları arka planda otomatik olarak 1 artırılır.
-• Sesli Veri Girişi (Dikte) Entegrasyonu: Windows işletim sistemlerinin yerleşik yapay zeka destekli ses asistanı (Win+H) sisteme entegre edilerek, veri giriş alanlarının klavye kullanılmadan sesle doldurulabilmesi sağlanmıştır.
-• Çapraz Platform (Pardus/Linux) Optimizasyonu: Sistem pencerelerinin ve uyarı diyaloglarının işletim sistemi pencere yöneticileriyle uyumlu çalışması sağlanmış; uyarı ekranlarının ana pencerenin arkasında kalarak sistemi kilitlemesi sorunu tamamen giderilmiştir.
-• Dinamik Sürüm Takibi: Programın sürüm kontrolleri ve sürüm notları, bulut (GitHub) altyapısı üzerinden dinamik olarak okunacak şekilde güncellenmiştir.
-• Hata Giderimleri (Bug Fixes):
-  - Kitap arama ve filtreleme algoritmalarındaki kararlılık sorunları çözülmüştür.
-  - Sisteme öğrenci/kitap aktarmak için indirilen boş Excel şablonlarında uzun barkodların "Bilimsel Gösterim (E+12)" formatında görünmesi sorunu formatlama teknikleriyle giderilmiştir.
+v4.5 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER
 
+• MEB Güvenlik Duvarı (Fatih Ağı) Tam Uyumluluğu: İnternetten kitap arama modülünde yaşanan MEB ağı kaynaklı güvenlik sertifikası (SSL/PKIX) engelleri özel bir güven motoru ile tamamen aşıldı. Kütüphaneler artık kısıtlı ağlarda bile API'lere kesintisiz bağlanarak otomatik kitap verisi çekebilecek.
+• Tablo İçi Hızlı Düzenleme (Inline Editing): Program arayüzüne "Excel" esnekliği kazandırıldı! Artık kitap listesindeki herhangi bir hücreye (Barkod, Kitap Adı, Yazar, Yayınevi, Raf, Tür, Sayfa) çift tıklayarak anında düzenleme yapılabilir. Başka bir yere tıklandığında (odak kaybı) veya "Enter" tuşuna basıldığında değişiklikler saniyesinde veritabanına kaydedilir.
+• Akıllı Stok ve Mükerrer Kayıt Koruması: Ekranda halihazırda var olan veya veritabanında kayıtlı olan bir kitabın barkodu tekrar okutulduğunda sistem artık otomatik stok şişirmesi yapmaz. Kullanıcıya "Bu kitap sistemde mevcut, stoğu 1 artırmak istiyor musunuz?" şeklinde akıllı bir onay penceresi sunarak mükerrer işlemlerin ve stok hatalarının önüne geçilir.
+• Dinamik Barkod Yönlendirme (Akıllı İmleç): Wi-Fi tabanlı mobil barkod okuyucu uygulamasından gelen veriler, eğer kullanıcı tabloda bir hücreyi çift tıklayıp düzenlemeye açmışsa doğrudan o hücrenin içine yazılıp otomatik kaydedilir. Hücre açık değilse, standart olarak ana arama çubuğuna yönlendirilir.
+• Kusursuzlaştırılmış "Upsert" ve Otomatik Kayıt Motoru: Kitap kaydedilirken oluşan "raf bilgisini kaydetmeme" veya "stok sayısını hatalı hesaplama" gibi senkronizasyon bug'ları tamamen giderildi. Ekranda yazan değer neyse, veritabanına milimetrik olarak o yansıtılır.
+• Sesli Veri Girişi (Dikte) Entegrasyonu: Windows işletim sistemlerinin yerleşik yapay zeka destekli ses asistanı (Win+H) sisteme entegre edilerek, veri giriş alanlarının klavye kullanılmadan sesle doldurulabilmesi sağlandı.
+• Gelişmiş Barkod Yazdırma Motoru: Kullanıcılara "Sadece Seçili Kitaplar" veya "Tüm Envanter" seçenekleri sunulmuştur. Çıktı formatı olarak "Standart A4 Yazıcı" ve "Termal Barkod Makinesi" (tekli etiket) seçenekleri ile milimetrik boyutlandırma desteği devam etmektedir.
 
-2. OKA SİSTEMİNİN TEMEL ÖZELLİKLERİ VE MODÜLLERİ
---------------------------------------------------------------------------------
+OKA SİSTEMİNİN TEMEL ÖZELLİKLERİ VE MODÜLLERİ
+
 • Kapsamlı Envanter Yönetimi: Kütüphanedeki yayınların barkod, tür, raf bilgisi, stok ve durum bazlı olarak detaylı şekilde kayıt altına alınması ve yönetilmesi.
 • Hızlı Ödünç ve İade İşlemleri: Barkod okuyucu desteği ile saniyeler içerisinde öğrencilere kitap tanımlama ve iade alma işlemleri. İlgili kitabın o an hangi öğrencilerde olduğunun detaylı takibi.
 • Gelişmiş Filtreleme ve Raporlama: Envanter içerisinde çoklu kriterlere (Yazar, Yayınevi, Raf, Tür vb.) göre hızlı arama. "Geciken Kitaplar" listesinin sınıf veya okul bazlı olarak filtrelenerek PDF formatında dökümünün alınması.
