@@ -1,9 +1,12 @@
 OKA (Okul Kütüphane Arşivi) Sürüm Notları ve Sistem Özellikleri
-SÜRÜM: v4.5
-TARİH: Haziran 2026
+SÜRÜM: v4.6
+TARİH: 21 Haziran 2026
 
-v4.5 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER
+v4.6 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER
 
+• Kitap bulma veri tabanına 200 Bin civarı kita eklendi kitaplar daha kolay bulunabilecek.
+• Kitapların listelendiği ekranda stok sayısına da çift tıklayarak güncelleyebilme özelliği ekelndi.
+• Barkod oluşturma özelliğinde A4 kağıdına 4x10 etikete uygun basım özelliği eklendi
 • MEB Güvenlik Duvarı (Fatih Ağı) Tam Uyumluluğu: İnternetten kitap arama modülünde yaşanan MEB ağı kaynaklı güvenlik sertifikası (SSL/PKIX) engelleri özel bir güven motoru ile tamamen aşıldı. Kütüphaneler artık kısıtlı ağlarda bile API'lere kesintisiz bağlanarak otomatik kitap verisi çekebilecek.
 • Tablo İçi Hızlı Düzenleme (Inline Editing): Program arayüzüne "Excel" esnekliği kazandırıldı! Artık kitap listesindeki herhangi bir hücreye (Barkod, Kitap Adı, Yazar, Yayınevi, Raf, Tür, Sayfa) çift tıklayarak anında düzenleme yapılabilir. Başka bir yere tıklandığında (odak kaybı) veya "Enter" tuşuna basıldığında değişiklikler saniyesinde veritabanına kaydedilir.
 • Akıllı Stok ve Mükerrer Kayıt Koruması: Ekranda halihazırda var olan veya veritabanında kayıtlı olan bir kitabın barkodu tekrar okutulduğunda sistem artık otomatik stok şişirmesi yapmaz. Kullanıcıya "Bu kitap sistemde mevcut, stoğu 1 artırmak istiyor musunuz?" şeklinde akıllı bir onay penceresi sunarak mükerrer işlemlerin ve stok hatalarının önüne geçilir.
