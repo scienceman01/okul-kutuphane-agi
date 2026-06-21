@@ -1,9 +1,12 @@
 OKA (Okul Kütüphane Arşivi) Sürüm Notları ve Sistem Özellikleri
-SÜRÜM: v4.6
+SÜRÜM: v4.7
 TARİH: 21 Haziran 2026
 
-v4.6 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER
+v4.7 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER
 
+• varsayılan admin silenmeme problemi giderildi. 
+• Ödünç ver kısmına notlar eklendi
+Yeni kitap ekle butonuna da barkod ile kitap arama özelliği eklendi
 • Kitap bulma veri tabanına 200 Bin civarı kita eklendi kitaplar daha kolay bulunabilecek.
 • Kitapların listelendiği ekranda stok sayısına da çift tıklayarak güncelleyebilme özelliği ekelndi.
 • Barkod oluşturma özelliğinde A4 kağıdına 4x10 etikete uygun basım özelliği eklendi
