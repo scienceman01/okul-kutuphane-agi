@@ -1,42 +1,42 @@
 OKA (Okul Kütüphane Arşivi) Sürüm Notları ve Sistem Özellikleri
-SÜRÜM: v4.8
-TARİH: Temmuz 2026
+SÜRÜM: v4.9
+TARİH: Eylül 2026
 
-🚀 v4.8 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER (YENİ)
-Akıllı Kurulum ve Kusursuz Geçiş (Master UUID): Yeni bir güncelleme çıktığında eski sürümü kaldırma derdi tarihe karıştı! Artık güncel kurulum dosyasını çalıştırdığınızda, sistem eski versiyonu otomatik tanıyıp sessizce üzerine yazar. Bilgisayarınızda çift program görünmez ve kütüphane verileriniz (kitaplar, ödünçler) milimi milimine korunarak kaldığı yerden devam eder.
+🚀 v4.9 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER (YENİ)
+Canlı Öğrenci Teyit Sistemi (Anlık İsim Sorgulama): Kitap ödünç verme ekranında öğrencinin okul numarasını tuşladığınız anda, öğrencinin "Adı, Soyadı ve Sınıfı" saniyesinde ekranda belirir. Öğrenciyi tanımasanız dahi ismi teyit ederek yanlış kişiye kitap verme sorununu (numara karıştırma) kökünden çözebilirsiniz.
 
-Aylık Şampiyonlar (Tarih Filtreli Akıllı Raporlama): Raporları her ay sıfırlama ihtiyacını ortadan kaldırdık. "En Çok Okuyan Öğrenciler" listesine akıllı tarih filtresi eklendi. Artık sistemden ister "Ekim Ayının Şampiyonları"nı listeleyebilir, isterseniz "Tüm Zamanlar" seçeneğiyle gelmiş geçmiş en çok okuyan kitap kurtlarını detaylıca raporlayabilirsiniz.
+Otomatik Başlatma (Aktif Banko Modu): Ayarlar menüsüne eklenen "İlk açılışta Kitap Yönetimi/Ödünç Ekranı Gelsin" çentiği ile programı standart bir arşivden çıkarıp tam bir kütüphane bankosuna dönüştürebilirsiniz. Program açılır açılmaz doğrudan işlem ekranınız hazır gelir.
+
+Kırmızı Alarm (Agresif Gecikme Vurgusu): Teslim tarihi geçen kitaplar artık tabloda cılız bir yazıyla değil; tüm satırı kaplayan uyarı rengi ve kan kırmızı, kalın puntolu "⚠ X GÜN GECİKTİ" ibaresiyle vurgulanır. Geciken kitapları gözden kaçırmanız artık imkansız!
+
+Dinamik Zaman Göstergesi: Kitap yönetim ekranındaki arama çubuğunun sağ ve sol köşelerine, saniye saniye akan şık bir dijital saat ve tarih paneli entegre edilerek arayüz zenginleştirildi.
+
+Akıllı Kurulum ve Kusursuz Geçiş (Master UUID): Yeni bir güncelleme çıktığında eski sürümü kaldırma derdi tarihe karıştı! Artık güncel kurulum dosyasını çalıştırdığınızda, sistem eski versiyonu otomatik tanıyıp sessizce üzerine yazar. Çift program görünmez ve verileriniz milimi milimine korunarak kaldığı yerden devam eder.
+
+Aylık Şampiyonlar (Tarih Filtreli Akıllı Raporlama): Raporları her ay sıfırlama ihtiyacını ortadan kaldırdık. "En Çok Okuyan Öğrenciler" listesine akıllı tarih filtresi eklendi. İster "Ekim Ayının Şampiyonları"nı listeleyin, isterseniz "Tüm Zamanlar" seçeneğiyle gelmiş geçmiş en çok okuyanları dökün.
 
 İade Sonrası "Raf Yönlendirme" Asistanı: Öğrenciden kitabı iade aldığınızda "Bu kitap hangi raftaydı?" diye düşünmeye son! İade işlemi tamamlandığında açılan onay penceresi, kitabın hangi rafa (Örn: A-01) yerleştirileceğini size otomatik olarak hatırlatır.
 
-Kusursuz Excel Yedek Yükleme Altyapısı: Büyük boyutlu Excel yedek dosyalarının sisteme geri yüklenmesi sırasında yaşanan okuma sorunları ve veri motoru kilitlenmeleri (Apache POI entegrasyonuyla) kökünden çözüldü. Artık evde aldığınız devasa yedekler bile okulda tek tıkla ve sıfır hatayla sisteme yüklenebiliyor.
+Kusursuz Excel Yedek Yükleme Altyapısı: Büyük boyutlu Excel yedek dosyalarının sisteme geri yüklenmesi sırasında yaşanan okuma sorunları ve veri motoru kilitlenmeleri kökünden çözüldü. Artık devasa yedekler bile okulda tek tıkla ve sıfır hatayla sisteme yüklenebiliyor.
 
-Ölümsüz Admin (Niğde) Sorunu Giderildi: Sistemi sıfırladıktan sonra veya yeni bir yetkili eklendiğinde sürekli yeniden oluşan varsayılan "niğde" hesabının silinememesi problemi çözüldü. Artık sistemde farklı bir yönetici varsa, varsayılan hesap bir daha asla oluşturulmaz.
+Ödünç Verme Notları: Öğrenciye kitap teslim edilirken açılan pencereye özel "Raf / Notlar" alanı eklendi. Aynı kitaptan birden fazla kopya olduğunda hangisinin kime verildiği raflarına kadar takip edilebilir hale geldi.
 
-Ödünç Verme Notları: Öğrenciye kitap teslim edilirken açılan pencereye özel "Raf / Notlar" alanı eklendi. Böylece aynı kitaptan birden fazla olduğunda hangi kopyanın kime verildiği raflarına kadar takip edilebilir hale getirildi.
+Ölümsüz Admin (Niğde) Sorunu Giderildi: Sistemi sıfırladıktan sonra sürekli yeniden oluşan varsayılan "niğde" hesabının silinememesi problemi çözüldü. Sistemde farklı bir yönetici varsa, varsayılan kurtarma hesabı bir daha asla oluşturulmaz.
 
-Akıllı "Yeni Kitap Ekle" Butonu: Klasik "Yeni Kitap Ekle" butonu da doğrudan internet bağlantılı Seri Barkod Okutma (Akıllı Arama) motoruna yönlendirildi. Böylece tek tek kitap eklerken de internetin veri çekme gücünden faydalanılması sağlandı.
-
-Arama Havuzuna 200.000 Yeni Kitap: Kitap bulma veritabanı altyapısına 200 bin civarı yeni yayın eklenerek arama havuzu devasa bir boyuta ulaştırıldı. Artık kitap bilgilerini internetten çekmek çok daha kolay!
+Akıllı "Yeni Kitap Ekle" Butonu: Klasik "Yeni Kitap Ekle" butonu doğrudan internet bağlantılı Seri Barkod Okutma (Akıllı Arama) motoruna yönlendirildi. Tek tek kitap eklerken de 200.000 kitaplık internet havuzunun gücünden faydalanabilirsiniz.
 
 A4 Kağıdına 40'lı Hazır Etiket (PDF & Excel): Kırtasiyelerde satılan standart A4 boyutundaki 4x10 (40'lı) yapışkanlı etiket kağıtlarına milimetrik uyumlu toplu barkod basım özelliği eklendi.
 
-Tablo Üzerinden Hızlı Stok Güncelleme: Kitapların listelendiği ana ekranda, hiçbir menüye girmeden sadece "Stok" sayısına çift tıklayarak anında stok miktarını güncelleyebilme esnekliği getirildi.
+Tablo İçi Hızlı Düzenleme (Inline Editing) & Stok: Program arayüzüne "Excel" esnekliği kazandırıldı. Kitap listesindeki herhangi bir hücreye (Stok, Barkod, Yazar, Raf, vb.) çift tıklayarak anında düzenleme yapılabilir. Değişiklikler enter tuşuna basıldığında saniyesinde kaydedilir.
 
-MEB Güvenlik Duvarı (Fatih Ağı) Tam Uyumluluğu: İnternetten kitap arama modülünde yaşanan MEB ağı kaynaklı güvenlik sertifikası (SSL/PKIX) engelleri, özel bir güven motoru ile tamamen aşıldı. Kütüphaneler artık kısıtlı okul ağlarında bile API'lere kesintisiz bağlanarak otomatik kitap verisi çekebilir.
+MEB Güvenlik Duvarı (Fatih Ağı) Tam Uyumluluğu: Kitap arama modülünde yaşanan MEB ağı kaynaklı güvenlik sertifikası (SSL/PKIX) engelleri özel bir güven motoru ile aşıldı. Kısıtlı ağlarda bile API'lere kesintisiz bağlanılır.
 
-Tablo İçi Hızlı Düzenleme (Inline Editing): Program arayüzüne "Excel" esnekliği kazandırıldı. Artık kitap listesindeki herhangi bir hücreye (Barkod, Kitap Adı, Yazar, Yayınevi, Raf, vb.) çift tıklayarak anında düzenleme yapılabilir. Değişiklikler enter tuşuna basıldığında saniyesinde veritabanına işlenir.
-
-Mükerrer Kayıt Koruması (Ghost Event Engeli): Ekranda veya veritabanında var olan bir kitabın barkodu tekrar okutulduğunda sistem artık otomatik stok şişirmesi yapmaz. Kullanıcıya "Bu kitap sistemde mevcut, stoğu 1 artırmak istiyor musunuz?" şeklinde akıllı bir onay penceresi sunar.
-
-Dinamik Barkod Yönlendirme: Mobil barkod okuyucudan gelen veriler, eğer kullanıcı tabloda bir hücreyi çift tıklayıp düzenlemeye açmışsa doğrudan o hücreye yazılır. Hücre açık değilse ana arama çubuğuna yönlendirilir.
-
-Kusursuzlaştırılmış "Upsert" Motoru: Kitap kaydedilirken oluşan raf bilgisini kaydetmeme veya stoku hatalı hesaplama gibi senkronizasyon bug'ları tamamen giderildi. Ekranda yazan değer neyse, veritabanına milimetrik olarak o yansıtılır.
+Mükerrer Kayıt ve Ghost Event Koruması: Var olan bir kitabın barkodu tekrar okutulduğunda sistem otomatik stok şişirmesi yapmaz. Kullanıcıya "Bu kitap sistemde mevcut, stoğu 1 artırmak istiyor musunuz?" şeklinde akıllı bir onay penceresi sunar.
 
 Sesli Veri Girişi (Dikte) Entegrasyonu: Windows'un yerleşik yapay zeka destekli ses asistanı (Win+H) sisteme entegre edilerek, veri giriş alanlarının klavye kullanılmadan sesle doldurulabilmesi sağlandı.
 
 📚 OKA SİSTEMİNİN TEMEL ÖZELLİKLERİ VE MODÜLLERİ
-Kapsamlı Envanter Yönetimi: Kütüphanedeki yayınların barkod, tür, raf bilgisi, stok ve durum bazlı olarak detaylı şekilde kayıt altına alınması ve yönetilmesi.
+Kapsamlı Envanter Yönetimi: Kütüphanedeki yayınların barkod, tür, raf bilgisi, stok ve durum bazlı olarak detaylı şekilde kayıt altına alınması ve profesyonelce yönetilmesi.
 
 Hızlı Ödünç ve İade İşlemleri: Barkod okuyucu desteği ile saniyeler içerisinde öğrencilere kitap tanımlama ve iade alma işlemleri. İlgili kitabın o an hangi öğrencilerde olduğunun detaylı bilgi kartlarıyla (tooltip) anlık takibi.
 
@@ -48,8 +48,8 @@ Kota ve Süre Yönetimi: Okul politikalarına uygun olarak, öğrenci başına d
 
 Çevrimdışı (Offline) Çalışma Mimarisi: Sistemin temel kayıt, ödünç verme ve raporlama fonksiyonlarının internet bağlantısına veya harici bir sunucuya ihtiyaç duymadan, %100 yerel veritabanı (SQLite) üzerinden kesintisiz ve hızlı çalışabilmesi.
 
-Veri Güvenliği ve Tam Yedekleme: Tüm veritabanının (Kitaplar, Öğrenciler, Ödünç Kayıtları, Ayarlar) tek tıklama ile yerel diske yedeklenebilmesi ve olası bir veri kaybında bu yedeklerden sistemin tamamen geri yüklenebilmesi.
+Veri Güvenliği ve Tam Yedekleme: Tüm veritabanının (Kitaplar, Öğrenciler, Ödünç Kayıtları, Ayarlar) tek tıklama ile yerel diske yedeklenebilmesi ve olası bir veri kaybında bu yedeklerden sistemin tek tıkla tamamen geri yüklenebilmesi.
 
 Kişiselleştirilebilir ve Ergonomik Arayüz: Kullanıcı deneyimini artırmak amacıyla sisteme entegre edilen 3 farklı renk teması (Varsayılan, Açık Kitap, Klasik) ve ekran çözünürlüğüne otomatik uyum sağlayan duyarlı (responsive) pencere tasarımı.
 
-Rol Bazlı Yetkilendirme: Yönetici (Admin) ve Standart Kullanıcı ayrımları yapılarak, kritik ayarlara, yedekleme menülerine ve tüm kütüphaneyi silme işlemlerine yetkisiz erişimin engellenmesi.
+Rol Bazlı Yetkilendirme: Yönetici (Admin) ve Standart Kullanıcı ayrımları yapılarak, kritik ayarlara, yedekleme menülerine ve tüm kütüphaneyi silme işlemlerine yetkisiz (nöbetçi öğrenci vb.) erişiminin engellenmesi.
