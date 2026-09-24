@@ -1,13 +1,17 @@
 OKA (Okul Kütüphane Arşivi) Sürüm Notları ve Sistem Özellikleri
-SÜRÜM: v4.9
-TARİH: Eylül 2026
+SÜRÜM: v4.10
+TARİH: 24 Eylül 2026
 
-🚀 v4.9 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER (YENİ)
+🚀 v4.10 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER (YENİ)
+Akıllı Excel Entegrasyonu ve Dinamik Stok Yönetimi: Binlerce kitaplık devasa Excel listelerinin tek seferde yüklenmesi tamamen kusursuzlaştırıldı. Excel dosyasında barkodu eksik olan eski dönem veya özel basım eserlere sistem artık otomatik olarak benzersiz bir kayıt numarası (barkod) atamaktadır. Ek olarak, Excel listesinde veya mevcut veritabanında aynı barkoddan birden fazla tespit edilirse sistem mükerrer kayıt oluşturmaz; mevcut kitabın stok sayısını otomatik olarak artırır.
+
+Tam Uyumlu Pardus (Linux) Mimarisi: Sistem artık Pardus işletim sistemlerinde yüksek performanslı ve tam uyumlu çalışmaktadır. Özel geliştirilen .deb paket altyapısı sayesinde kurulum sonrası masaüstü kısayolları otomatik atanır ve yeni güncellemeler eski sürümleri sorunsuzca ezip geçer.
+
 Canlı Öğrenci Teyit Sistemi (Anlık İsim Sorgulama): Kitap ödünç verme ekranında öğrencinin okul numarasını tuşladığınız anda, öğrencinin "Adı, Soyadı ve Sınıfı" saniyesinde ekranda belirir. Öğrenciyi tanımasanız dahi ismi teyit ederek yanlış kişiye kitap verme sorununu (numara karıştırma) kökünden çözebilirsiniz.
 
 Otomatik Başlatma (Aktif Banko Modu): Ayarlar menüsüne eklenen "İlk açılışta Kitap Yönetimi/Ödünç Ekranı Gelsin" çentiği ile programı standart bir arşivden çıkarıp tam bir kütüphane bankosuna dönüştürebilirsiniz. Program açılır açılmaz doğrudan işlem ekranınız hazır gelir.
 
-Kırmızı Alarm (Agresif Gecikme Vurgusu): Teslim tarihi geçen kitaplar artık tabloda cılız bir yazıyla değil; tüm satırı kaplayan uyarı rengi ve kan kırmızı, kalın puntolu "⚠ X GÜN GECİKTİ" ibaresiyle vurgulanır. Geciken kitapları gözden kaçırmanız artık imkansız!
+Kırmızı Alarm (Agresif Gecikme Vurgusu): Teslim tarihi geçen kitaplar artık tabloda cılız bir yazıyla değil; tüm satırı kaplayan uyarı rengi ve kan kırmızı, kalın puntolu "⚠ X GÜN GECİKTİ" ibaresiyle vurgulanır. Geciken kitapları gözden kaçırmanız artık imkansız.
 
 Dinamik Zaman Göstergesi: Kitap yönetim ekranındaki arama çubuğunun sağ ve sol köşelerine, saniye saniye akan şık bir dijital saat ve tarih paneli entegre edilerek arayüz zenginleştirildi.
 
@@ -21,13 +25,13 @@ Kusursuz Excel Yedek Yükleme Altyapısı: Büyük boyutlu Excel yedek dosyalar�
 
 Ödünç Verme Notları: Öğrenciye kitap teslim edilirken açılan pencereye özel "Raf / Notlar" alanı eklendi. Aynı kitaptan birden fazla kopya olduğunda hangisinin kime verildiği raflarına kadar takip edilebilir hale geldi.
 
-Ölümsüz Admin (Niğde) Sorunu Giderildi: Sistemi sıfırladıktan sonra sürekli yeniden oluşan varsayılan "niğde" hesabının silinememesi problemi çözüldü. Sistemde farklı bir yönetici varsa, varsayılan kurtarma hesabı bir daha asla oluşturulmaz.
+Ölümsüz Admin Sorunu Giderildi: Sistemi sıfırladıktan sonra sürekli yeniden oluşan varsayılan "niğde" hesabının silinememesi problemi çözüldü. Sistemde farklı bir yönetici varsa, varsayılan kurtarma hesabı bir daha asla oluşturulmaz.
 
 Akıllı "Yeni Kitap Ekle" Butonu: Klasik "Yeni Kitap Ekle" butonu doğrudan internet bağlantılı Seri Barkod Okutma (Akıllı Arama) motoruna yönlendirildi. Tek tek kitap eklerken de 200.000 kitaplık internet havuzunun gücünden faydalanabilirsiniz.
 
 A4 Kağıdına 40'lı Hazır Etiket (PDF & Excel): Kırtasiyelerde satılan standart A4 boyutundaki 4x10 (40'lı) yapışkanlı etiket kağıtlarına milimetrik uyumlu toplu barkod basım özelliği eklendi.
 
-Tablo İçi Hızlı Düzenleme (Inline Editing) & Stok: Program arayüzüne "Excel" esnekliği kazandırıldı. Kitap listesindeki herhangi bir hücreye (Stok, Barkod, Yazar, Raf, vb.) çift tıklayarak anında düzenleme yapılabilir. Değişiklikler enter tuşuna basıldığında saniyesinde kaydedilir.
+Tablo İçi Hızlı Düzenleme (Inline Editing) & Stok: Program arayüzüne "Excel" esnekliği kazandırıldı. Kitap listesindeki herhangi bir hücreye (Stok, Barkod, Yazar, Raf, vb.) çift tıklayarak anında düzenleme yapılabilir. Değişiklikler Enter tuşuna basıldığında saniyesinde kaydedilir.
 
 MEB Güvenlik Duvarı (Fatih Ağı) Tam Uyumluluğu: Kitap arama modülünde yaşanan MEB ağı kaynaklı güvenlik sertifikası (SSL/PKIX) engelleri özel bir güven motoru ile aşıldı. Kısıtlı ağlarda bile API'lere kesintisiz bağlanılır.
 
