@@ -1,8 +1,32 @@
 OKA (Okul Kütüphane Arşivi) Sürüm Notları ve Sistem Özellikleri
-SÜRÜM: v4.10
-TARİH: 24 Eylül 2026
+SÜRÜM: v4.11
+TARİH: 20 Ekim 2026
 
-🚀 v4.10 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER (YENİ)
+🚀 v4.11 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER (YENİ)
+
+Çoklu Okul ve Kampüs Desteği (Ortaokul & Lise Ortak Havuz): Bünyesinde hem ortaokul hem lise barındıran veya aynı kütüphaneyi ortak kullanan okullarda, aynı öğrenci numaralarının çakışması sorunu tamamen çözüldü. Sistem artık yalnızca okul numarasını değil, "Okul No + Sınıf" ikilisini birlikte referans alır. Kitap ödünç verirken aynı numaraya sahip birden fazla öğrenci tespit edilirse, sistem otomatik olarak hangi sınıftaki öğrenciye kitap verileceğini soran akıllı seçim penceresini açar.
+
+Kaybolmayan "Sepet Mantığı" Çoklu Seçim (Akıllı Kutucuklar): Kitap tablosunun en soluna eklenen seçim kutucukları ([✓]) sayesinde, çoklu seçim yaparken yanlışlıkla başka bir yere tıklasanız veya arama kutusuna farklı kitap isimleri yazarak filtreleme yapsanız bile seçtiğiniz kitaplar hafızada kalır, asla sıfırlanmaz! Fareyle sürükleyerek veya sağ tık menüsüyle ("Bu Raftaki / Türdeki / Nottaki Tüm Kitapları Tikle") yüzlerce kitabı kolayca seçime ekleyebilir, işiniz bittiğinde "🧹 Seçimleri Temizle" butonuyla tek tıkla sıfırlayabilirsiniz.
+
+"Notlar / Kaynak" Sütunu ve Anlık Filtre İstatistiği: Kitapların temin edildiği kaynağı (Örn: "Valilikten Gelen", "TÜBİTAK", "Okul Aile Birliği", "Bağış" vb.) kaydedebileceğiniz yeni "Notlar / Kaynak" alanı eklendi. Üstelik arama çubuğuna örneğin "Valilik" yazdığınızda, ekranın sol altındaki sayaç anında "🔍 Filtrelenen: X Çeşit (Y Adet) | Genel Toplam: ..." şeklinde güncellenir. Böylece resmi kurumların istediği kitap sayılarını Excel'e bile ihtiyaç duymadan saniyeler içinde görebilirsiniz.
+
+Akıllı Raf Seçim Listesi ve Doğal Raf Sıralaması: Kitap eklerken veya güncellerken "Raf Bilgisi" kutucuğuna tıkladığınız anda, kütüphanenizde o ana kadar tanımlanmış tüm raflar açılır liste olarak karşınıza gelir; ister listeden tek tıkla seçebilir isterseniz yeni raf yazabilirsiniz. Ayrıca tablodaki Raf No sıralaması "1, 11, 2, 22" karmaşasından kurtarılarak "1, 2, 3, 4... 11, 22" şeklinde doğal sayısal sıralamaya kavuşturuldu.
+
+Yön Tuşlu Barkod Hizalama Asistanı, Çerçeve ve Stok Çoğaltma:
+- Stok Kadar Otomatik Barkod: Barkod yazdırırken sistem artık her kitaptan tek bir etiket basmak yerine, kitabın stok sayısı kaç adetse otomatik olarak o kadar etiket çoğaltarak basar.
+- Milimetrik Yön Tuşlu Hizalama: Her yazıcının kağıt çekme payı farklı olduğu için A4 (40'lı) ve Termal barkod yazdırma ekranlarına "⬅ Sol, Sağ ➡, ⬆ Yukarı, ⬇ Aşağı" yön butonları eklendi. Her basışta etiketleri 2 mm (veya istediğiniz özel ölçüde) kaydırarak barkodları yapışkanlı kağıda milimetrik oturtabilirsiniz.
+- İsteğe Bağlı Kesim Çerçevesi ve Boyut Kilidi: Yapışkanlı etiket yerine düz A4 kağıdına çıktı alıp makasla kesen okullar için "Etiket Çerçevesi Çiz" seçeneği eklendi. Ayrıca kısa barkodların aşırı büyüyerek kitap adıyla iç içe girmesi engellendi.
+
+Demirbaş Eser Koruması: Ansiklopedi, sözlük ve kaynak eserler için "Demirbaş (Kütüphane Dışına Ödünç Verilemez)" seçeneği eklendi. Demirbaş olarak işaretlenen kitaplar tabloda özel renkle vurgulanır ve öğrencilere ödünç verilmesi sistem tarafından otomatik olarak engellenir.
+
+Zırhlı Yedekten Geri Yükleme (Tam Uyumluluk): Okuldan alınan Excel yedeğini farklı bir bilgisayara (Windows 10, Windows 11 veya Pardus) yüklerken boş satırlardan veya eski sürüm sütun farklarından kaynaklanan veritabanı (NOT NULL) hataları tamamen giderildi. Eski sürüm yedekleriniz bile yeni sürüme tek tıkla ve sıfır hatayla yüklenir.
+
+Acil Durum Kurtarma Kodları (OTP) ve Pencere Zırhı: Şifresini unutan yöneticiler için tek kullanımlık acil durum kurtarma şifreleri altyapısı eklendi; kullanılan kod güvenlik gereği anında imha edilir. Ayrıca tüm uyarı, onay ve bilgi pencerelerinin her zaman en üstte açılması sağlanarak pencerelerin arka planda kalma sorunu tamamen çözüldü.
+
+--------------------------------------------------
+
+⚡ ÖNCEKİ SÜRÜMLERDE (v4.10) EKLENEN ÖNE ÇIKAN ÖZELLİKLER
+
 Akıllı Excel Entegrasyonu ve Dinamik Stok Yönetimi: Binlerce kitaplık devasa Excel listelerinin tek seferde yüklenmesi tamamen kusursuzlaştırıldı. Excel dosyasında barkodu eksik olan eski dönem veya özel basım eserlere sistem artık otomatik olarak benzersiz bir kayıt numarası (barkod) atamaktadır. Ek olarak, Excel listesinde veya mevcut veritabanında aynı barkoddan birden fazla tespit edilirse sistem mükerrer kayıt oluşturmaz; mevcut kitabın stok sayısını otomatik olarak artırır.
 
 Tam Uyumlu Pardus (Linux) Mimarisi: Sistem artık Pardus işletim sistemlerinde yüksek performanslı ve tam uyumlu çalışmaktadır. Özel geliştirilen .deb paket altyapısı sayesinde kurulum sonrası masaüstü kısayolları otomatik atanır ve yeni güncellemeler eski sürümleri sorunsuzca ezip geçer.
@@ -21,8 +45,6 @@ Aylık Şampiyonlar (Tarih Filtreli Akıllı Raporlama): Raporları her ay sıf�
 
 İade Sonrası "Raf Yönlendirme" Asistanı: Öğrenciden kitabı iade aldığınızda "Bu kitap hangi raftaydı?" diye düşünmeye son! İade işlemi tamamlandığında açılan onay penceresi, kitabın hangi rafa (Örn: A-01) yerleştirileceğini size otomatik olarak hatırlatır.
 
-Kusursuz Excel Yedek Yükleme Altyapısı: Büyük boyutlu Excel yedek dosyalarının sisteme geri yüklenmesi sırasında yaşanan okuma sorunları ve veri motoru kilitlenmeleri kökünden çözüldü. Artık devasa yedekler bile okulda tek tıkla ve sıfır hatayla sisteme yüklenebiliyor.
-
 Ödünç Verme Notları: Öğrenciye kitap teslim edilirken açılan pencereye özel "Raf / Notlar" alanı eklendi. Aynı kitaptan birden fazla kopya olduğunda hangisinin kime verildiği raflarına kadar takip edilebilir hale geldi.
 
 Ölümsüz Admin Sorunu Giderildi: Sistemi sıfırladıktan sonra sürekli yeniden oluşan varsayılan "niğde" hesabının silinememesi problemi çözüldü. Sistemde farklı bir yönetici varsa, varsayılan kurtarma hesabı bir daha asla oluşturulmaz.
@@ -31,7 +53,7 @@ Akıllı "Yeni Kitap Ekle" Butonu: Klasik "Yeni Kitap Ekle" butonu doğrudan int
 
 A4 Kağıdına 40'lı Hazır Etiket (PDF & Excel): Kırtasiyelerde satılan standart A4 boyutundaki 4x10 (40'lı) yapışkanlı etiket kağıtlarına milimetrik uyumlu toplu barkod basım özelliği eklendi.
 
-Tablo İçi Hızlı Düzenleme (Inline Editing) & Stok: Program arayüzüne "Excel" esnekliği kazandırıldı. Kitap listesindeki herhangi bir hücreye (Stok, Barkod, Yazar, Raf, vb.) çift tıklayarak anında düzenleme yapılabilir. Değişiklikler Enter tuşuna basıldığında saniyesinde kaydedilir.
+Tablo İçi Hızlı Düzenleme (Inline Editing) & Stok: Program arayüzüne "Excel" esnekliği kazandırıldı. Kitap listesindeki herhangi bir hücreye (Stok, Barkod, Yazar, Raf, Notlar vb.) çift tıklayarak anında düzenleme yapılabilir. Değişiklikler Enter tuşuna basıldığında saniyesinde kaydedilir.
 
 MEB Güvenlik Duvarı (Fatih Ağı) Tam Uyumluluğu: Kitap arama modülünde yaşanan MEB ağı kaynaklı güvenlik sertifikası (SSL/PKIX) engelleri özel bir güven motoru ile aşıldı. Kısıtlı ağlarda bile API'lere kesintisiz bağlanılır.
 
@@ -39,16 +61,19 @@ Mükerrer Kayıt ve Ghost Event Koruması: Var olan bir kitabın barkodu tekrar 
 
 Sesli Veri Girişi (Dikte) Entegrasyonu: Windows'un yerleşik yapay zeka destekli ses asistanı (Win+H) sisteme entegre edilerek, veri giriş alanlarının klavye kullanılmadan sesle doldurulabilmesi sağlandı.
 
+--------------------------------------------------
+
 📚 OKA SİSTEMİNİN TEMEL ÖZELLİKLERİ VE MODÜLLERİ
-Kapsamlı Envanter Yönetimi: Kütüphanedeki yayınların barkod, tür, raf bilgisi, stok ve durum bazlı olarak detaylı şekilde kayıt altına alınması ve profesyonelce yönetilmesi.
+
+Kapsamlı Envanter Yönetimi: Kütüphanedeki yayınların barkod, tür, raf bilgisi, kaynak/not, stok ve durum bazlı olarak detaylı şekilde kayıt altına alınması ve profesyonelce yönetilmesi.
 
 Hızlı Ödünç ve İade İşlemleri: Barkod okuyucu desteği ile saniyeler içerisinde öğrencilere kitap tanımlama ve iade alma işlemleri. İlgili kitabın o an hangi öğrencilerde olduğunun detaylı bilgi kartlarıyla (tooltip) anlık takibi.
 
-Gelişmiş Filtreleme ve Raporlama: Envanter içerisinde çoklu kriterlere (Yazar, Yayınevi, Raf, vb.) göre hızlı arama. Geciken kitapların sınıf veya tüm okul bazlı olarak filtrelenerek PDF formatında resmi dökümünün alınması.
+Gelişmiş Filtreleme ve Raporlama: Envanter içerisinde çoklu kriterlere (Yazar, Yayınevi, Raf, Tür, Not/Kaynak vb.) göre hızlı arama ve anlık adet/çeşit sayımı. Geciken kitapların sınıf veya tüm okul bazlı olarak filtrelenerek PDF formatında resmi dökümünün alınması.
 
 Toplu Veri Aktarımı (Excel): Kütüphane kayıtlarının ve öğrenci listelerinin mevcut şablonlar kullanılarak Excel (XLSX) formatında toplu olarak sisteme aktarılması veya sistemden dışa aktarılması.
 
-Kota ve Süre Yönetimi: Okul politikalarına uygun olarak, öğrenci başına düşen maksimum kitap ödünç alma limitinin ve varsayılan teslim süresinin (gün) parametrik olarak ayarlanabilmesi.
+Kota ve Süre Yönetimi: Okul politikalarına uygun olarak, öğrenci başına düşen maksimum kitap ödünç alma limitinin, varsayılan teslim süresinin ve maksimum ödünç gün sınırının parametrik olarak ayarlanabilmesi.
 
 Çevrimdışı (Offline) Çalışma Mimarisi: Sistemin temel kayıt, ödünç verme ve raporlama fonksiyonlarının internet bağlantısına veya harici bir sunucuya ihtiyaç duymadan, %100 yerel veritabanı (SQLite) üzerinden kesintisiz ve hızlı çalışabilmesi.
 
