@@ -1,15 +1,6 @@
-🚀 OKA (Okul Kütüphane Arşivi) v4.13 Sürüm Notları
-📅 Yayın Tarihi: 25 Kasım 2026
-
-Bu sürümde bilgisayarın BIOS pili bitmesi veya sistem saatinin sıfırlanması nedeniyle oluşan hatalı tarihli ödünç kayıtlarına karşı tam koruma kalkanı eklenmiş, mevcut hatalı kayıtları tek tıkla onarma aracı geliştirilmiş ve ekran okuyucu (NVDA) ile arayüz kararlılığı iyileştirilmiştir.
-
-🛡️ BIOS Saati Koruması ve Hatalı Tarih Onarım Sistemi (Yeni)
-• Sistem Saati Doğrulama ve Koruma Kalkanı: BIOS pili bitmesi veya Windows tarih/saat ayarının sıfırlanması (örneğin 2012 yılına dönmesi) ya da sistem tarihinin veritabanındaki son işlem tarihinden geriye düşmesi durumunda, hatalı tarihle ödünç kaydı oluşturulması otomatik olarak engellenir ve kullanıcıya açıklayıcı uyarı gösterilir.
-• Tarih Koruma Modu: Bilgisayarın sistem tarihi hatalı olsa bile iade alma, gecikme süresi hesaplama ve üst bilgi tarih göstergesi veritabanındaki son geçerli işlem tarihini baz alarak güvenli modda çalışmaya devam eder.
-• Otomatik Tespit ve Tek Tıkla Tarih Onarımı: Program açılışında ve "Ayarlar > Hatalı Tarihli Ödünç Kayıtlarını Onar" bölümünde, daha önce sistem saati sıfırlanması nedeniyle anormal tarihle kaydedilmiş aktif ödünç kayıtları otomatik tespit edilir. Onay verildiğinde orijinal ödünç süreleri korunarak veriliş ve son teslim tarihleri bugünün tarihine göre tek tıkla onarılır.
-• Raporlarda Güvenli Tarih Gösterimi: Geciken kitaplar raporunda anormal tarihli kayıtlar binlerce günlük sahte gecikme yerine "Hatalı Tarih (Yıl)" bilgisiyle listelenir.
-
-♿ Erişilebilirlik (NVDA) ve Arayüz İyileştirmeleri
-• Diyalog Pencerelerinde NVDA Odak Desteği: Sistem tarihi uyarıları, tarih onarım onay pencereleri ve bilgilendirme mesajlarının metin içerikleri ekran okuyucu tarafından doğrudan odaklanıp seslendirilecek şekilde yapılandırıldı.
-• Rapor Tablolarında Otomatik Gezinme: Raporlar ekranında herhangi bir rapor oluşturulduğunda odak otomatik olarak sonuç tablosuna taşınıp ilk kayıt seçilerek klavye ve NVDA ile anında gezinme sağlandı.
-• Ana Panel Anlık Saat ve Tarih Güncellemesi: Ana ekran (Dashboard) açıldığı ilk milisaniyede sistem tarih ve saati anlık yüklenerek taslak etiketlerin kısa süreli görünmesi giderildi.
+OKA v4.13 Sürüm Notları
+--------------------------------------------------
+- YENİ: BIOS pili bitmesi veya Windows saati sıfırlanması durumunda hatalı tarihle ödünç/iade kaydı oluşmasını önleyen "Tarih Korumalı Çalışma Modu" eklendi.
+- YENİ: Açılışta sistem saati denetimi ve Ayarlar menüsüne "Hatalı Tarihli Ödünç Kayıtlarını Onar" aracı eklendi.
+- İYİLEŞTİRME: Geciken kitap raporlarında anormal/eski sistem tarihlerinden kaynaklanan hatalı gün hesaplamaları giderildi.
+- İYİLEŞTİRME: NVDA ekran okuyucu uyumluluğu ve çoklu tarih formatı desteği güçlendirildi.
