@@ -1,77 +1,15 @@
-OKA (Okul Kütüphane Arşivi) Sürüm Notları ve Sistem Özellikleri
-SÜRÜM: v4.12
-TARİH: 12 Kasım 2026
+🚀 OKA (Okul Kütüphane Arşivi) v4.13 Sürüm Notları
+📅 Yayın Tarihi: 25 Kasım 2026
 
-🚀 v4.12 İLE GELEN YENİLİKLER VE İYİLEŞTİRMELER (YENİ)
+Bu sürümde bilgisayarın BIOS pili bitmesi veya sistem saatinin sıfırlanması nedeniyle oluşan hatalı tarihli ödünç kayıtlarına karşı tam koruma kalkanı eklenmiş, mevcut hatalı kayıtları tek tıkla onarma aracı geliştirilmiş ve ekran okuyucu (NVDA) ile arayüz kararlılığı iyileştirilmiştir.
 
-Kapsayıcı Tasarım: Görme Engelli ve Ekran Okuyucu Modu (NVDA Uyumu): Görme engelli kütüphane görevlileri ve öğretmenlerimiz için Ayarlar menüsüne "♿ Görme Engelli / Ekran Okuyucu Modu" eklendi. Sistemdeki tüm veri giriş kutucukları, arama çubukları, onay kutuları ve butonlar arka planda ekran okuyucular (Örn: NVDA) için özel etiketlendirildi (AccessibleText). Artık klavye (Tab tuşu) ile gezinirken sistem size tam olarak hangi kutuda olduğunuzu (Örn: "Kitap Adı yazım alanı", "Yazar Adı yazım alanı", "Seçili Kitabı Güncelle Butonu") sesli olarak okur.
+🛡️ BIOS Saati Koruması ve Hatalı Tarih Onarım Sistemi (Yeni)
+• Sistem Saati Doğrulama ve Koruma Kalkanı: BIOS pili bitmesi veya Windows tarih/saat ayarının sıfırlanması (örneğin 2012 yılına dönmesi) ya da sistem tarihinin veritabanındaki son işlem tarihinden geriye düşmesi durumunda, hatalı tarihle ödünç kaydı oluşturulması otomatik olarak engellenir ve kullanıcıya açıklayıcı uyarı gösterilir.
+• Tarih Koruma Modu: Bilgisayarın sistem tarihi hatalı olsa bile iade alma, gecikme süresi hesaplama ve üst bilgi tarih göstergesi veritabanındaki son geçerli işlem tarihini baz alarak güvenli modda çalışmaya devam eder.
+• Otomatik Tespit ve Tek Tıkla Tarih Onarımı: Program açılışında ve "Ayarlar > Hatalı Tarihli Ödünç Kayıtlarını Onar" bölümünde, daha önce sistem saati sıfırlanması nedeniyle anormal tarihle kaydedilmiş aktif ödünç kayıtları otomatik tespit edilir. Onay verildiğinde orijinal ödünç süreleri korunarak veriliş ve son teslim tarihleri bugünün tarihine göre tek tıkla onarılır.
+• Raporlarda Güvenli Tarih Gösterimi: Geciken kitaplar raporunda anormal tarihli kayıtlar binlerce günlük sahte gecikme yerine "Hatalı Tarih (Yıl)" bilgisiyle listelenir.
 
-Akıllı Sesli ve Metinsel Uyarı Asistanı (Erişilebilirlik): Görme engelli modunuz açıkken programı başlattığınızda veya kitap yönetimi ekranına girdiğinizde, sistem arka planda geciken kitapları analiz eder. Eğer teslim tarihi geçen kitaplar varsa renk değişimini görmenize gerek kalmadan, NVDA ekran okuyucunun doğrudan ve yüksek sesle okuyabileceği akıllı metinsel bir uyarı penceresi (Uyarı Sesi ile birlikte) karşınıza gelir. Ayrıca "Gecikenleri Göster" butonu gecikme durumunda "Dikkat! 5 adet geciken kitap var..." şeklinde konuşan dinamik bir yapıya bürünür.
-
-Geliştirilmiş Kurulum Motoru ve Tam Kapsamlı (32/64-Bit & Linux) Paketleme: Tüm kütüphanelere ve her yaşta donanıma eksiksiz hizmet verebilmek adına sistemin kurulum çekirdeği güçlendirildi. 
-- 64-Bit Modern Windows'lar için OpenJDK 26 tabanlı yüksek performanslı kurulum.
-- 32-Bit (Eski/Külüstür) Windows sistemler için özel optimize edilmiş BellSoft JDK 17 tabanlı kurulum.
-- Pardus (Linux) kullanan okullar için masaüstü kısayollarını (postinst) hatasız oluşturan, çoklu kullanıcı destekli yeni nesil .deb paketleyici entegre edildi.
-
-Eski Sürüm (v2.x) Veritabanı Kurtarma Sihirbazı: Önceki 2.x sürümlerinde yaşanan "kutuphane.db" dosyasının gizli klasörlerde (AppData/Roaming veya VirtualStore) kaybolması/okunamaması sorunu yeni kurulum mimarisiyle tamamen aşıldı. Öğretmenler eski veritabanlarını sisteme yüklediklerinde yeni sürüm v4.12, tabloları otomatik onarır ve sütun boşluklarını doldurarak veri kaybı yaşatmadan sistemi ayağa kaldırır. Ayrıca şifre unutulma senaryoları için arka kapı onarım aracı güncellendi.
-
---------------------------------------------------
-
-⚡ ÖNCEKİ SÜRÜMLERDE (v4.11 ve Öncesi) EKLENEN ÖNE ÇIKAN ÖZELLİKLER
-
-Çoklu Okul ve Kampüs Desteği (Ortaokul & Lise Ortak Havuz): Bünyesinde hem ortaokul hem lise barındıran veya aynı kütüphaneyi ortak kullanan okullarda, aynı öğrenci numaralarının çakışması sorunu tamamen çözüldü. Sistem artık yalnızca okul numarasını değil, "Okul No + Sınıf" ikilisini birlikte referans alır. Kitap ödünç verirken aynı numaraya sahip birden fazla öğrenci tespit edilirse, sistem otomatik olarak hangi sınıftaki öğrenciye kitap verileceğini soran akıllı seçim penceresini açar.
-
-Kaybolmayan "Sepet Mantığı" Çoklu Seçim (Akıllı Kutucuklar): Kitap tablosunun en soluna eklenen seçim kutucukları ([✓]) sayesinde, çoklu seçim yaparken yanlışlıkla başka bir yere tıklasanız veya arama kutusuna farklı kitap isimleri yazarak filtreleme yapsanız bile seçtiğiniz kitaplar hafızada kalır, asla sıfırlanmaz! Fareyle sürükleyerek veya sağ tık menüsüyle ("Bu Raftaki / Türdeki / Nottaki Tüm Kitapları Tikle") yüzlerce kitabı kolayca seçime ekleyebilir, işiniz bittiğinde "🧹 Seçimleri Temizle" butonuyla tek tıkla sıfırlayabilirsiniz.
-
-"Notlar / Kaynak" Sütunu ve Anlık Filtre İstatistiği: Kitapların temin edildiği kaynağı (Örn: "Valilikten Gelen", "TÜBİTAK", "Okul Aile Birliği", "Bağış" vb.) kaydedebileceğiniz yeni "Notlar / Kaynak" alanı eklendi. Üstelik arama çubuğuna örneğin "Valilik" yazdığınızda, ekranın sol altındaki sayaç anında "🔍 Filtrelenen: X Çeşit (Y Adet) | Genel Toplam: ..." şeklinde güncellenir. Böylece resmi kurumların istediği kitap sayılarını Excel'e bile ihtiyaç duymadan saniyeler içinde görebilirsiniz.
-
-Akıllı Raf Seçim Listesi ve Doğal Raf Sıralaması: Kitap eklerken veya güncellerken "Raf Bilgisi" kutucuğuna tıkladığınız anda, kütüphanenizde o ana kadar tanımlanmış tüm raflar açılır liste olarak karşınıza gelir; ister listeden tek tıkla seçebilir isterseniz yeni raf yazabilirsiniz. Ayrıca tablodaki Raf No sıralaması "1, 11, 2, 22" karmaşasından kurtarılarak "1, 2, 3, 4... 11, 22" şeklinde doğal sayısal sıralamaya kavuşturuldu.
-
-Yön Tuşlu Barkod Hizalama Asistanı, Çerçeve ve Stok Çoğaltma:
-- Stok Kadar Otomatik Barkod: Barkod yazdırırken sistem artık her kitaptan tek bir etiket basmak yerine, kitabın stok sayısı kaç adetse otomatik olarak o kadar etiket çoğaltarak basar.
-- Milimetrik Yön Tuşlu Hizalama: Her yazıcının kağıt çekme payı farklı olduğu için A4 (40'lı) ve Termal barkod yazdırma ekranlarına "⬅ Sol, Sağ ➡, ⬆ Yukarı, ⬇ Aşağı" yön butonları eklendi. Her basışta etiketleri 2 mm (veya istediğiniz özel ölçüde) kaydırarak barkodları yapışkanlı kağıda milimetrik oturtabilirsiniz.
-- İsteğe Bağlı Kesim Çerçevesi ve Boyut Kilidi: Yapışkanlı etiket yerine düz A4 kağıdına çıktı alıp makasla kesen okullar için "Etiket Çerçevesi Çiz" seçeneği eklendi. Ayrıca kısa barkodların aşırı büyüyerek kitap adıyla iç içe girmesi engellendi.
-
-Demirbaş Eser Koruması: Ansiklopedi, sözlük ve kaynak eserler için "Demirbaş (Kütüphane Dışına Ödünç Verilemez)" seçeneği eklendi. Demirbaş olarak işaretlenen kitaplar tabloda özel renkle vurgulanır ve öğrencilere ödünç verilmesi sistem tarafından otomatik olarak engellenir.
-
-Zırhlı Yedekten Geri Yükleme (Tam Uyumluluk): Okuldan alınan Excel yedeğini farklı bir bilgisayara (Windows 10, Windows 11 veya Pardus) yüklerken boş satırlardan veya eski sürüm sütun farklarından kaynaklanan veritabanı (NOT NULL) hataları tamamen giderildi. Eski sürüm yedekleriniz bile yeni sürüme tek tıkla ve sıfır hatayla yüklenir.
-
-Akıllı Excel Entegrasyonu ve Dinamik Stok Yönetimi: Binlerce kitaplık devasa Excel listelerinin tek seferde yüklenmesi tamamen kusursuzlaştırıldı. Excel dosyasında barkodu eksik olan eski dönem veya özel basım eserlere sistem artık otomatik olarak benzersiz bir kayıt numarası (barkod) atamaktadır. Ek olarak, Excel listesinde veya mevcut veritabanında aynı barkoddan birden fazla tespit edilirse sistem mükerrer kayıt oluşturmaz; mevcut kitabın stok sayısını otomatik olarak artırır.
-
-Canlı Öğrenci Teyit Sistemi (Anlık İsim Sorgulama): Kitap ödünç verme ekranında öğrencinin okul numarasını tuşladığınız anda, öğrencinin "Adı, Soyadı ve Sınıfı" saniyesinde ekranda belirir. Öğrenciyi tanımasanız dahi ismi teyit ederek yanlış kişiye kitap verme sorununu (numara karıştırma) kökünden çözebilirsiniz.
-
-Kırmızı Alarm (Agresif Gecikme Vurgusu): Teslim tarihi geçen kitaplar artık tabloda cılız bir yazıyla değil; tüm satırı kaplayan uyarı rengi ve kan kırmızı, kalın puntolu "⚠ X GÜN GECİKTİ" ibaresiyle vurgulanır. Geciken kitapları gözden kaçırmanız artık imkansız.
-
-Akıllı Kurulum ve Kusursuz Geçiş (Master UUID): Yeni bir güncelleme çıktığında eski sürümü kaldırma derdi tarihe karıştı! Artık güncel kurulum dosyasını çalıştırdığınızda, sistem eski versiyonu otomatik tanıyıp sessizce üzerine yazar. Çift program görünmez ve verileriniz milimi milimine korunarak kaldığı yerden devam eder.
-
-İade Sonrası "Raf Yönlendirme" Asistanı: Öğrenciden kitabı iade aldığınızda "Bu kitap hangi raftaydı?" diye düşünmeye son! İade işlemi tamamlandığında açılan onay penceresi, kitabın hangi rafa (Örn: A-01) yerleştirileceğini size otomatik olarak hatırlatır.
-
-Ödünç Verme Notları: Öğrenciye kitap teslim edilirken açılan pencereye özel "Raf / Notlar" alanı eklendi. Aynı kitaptan birden fazla kopya olduğunda hangisinin kime verildiği raflarına kadar takip edilebilir hale geldi.
-
-A4 Kağıdına 40'lı Hazır Etiket (PDF & Excel): Kırtasiyelerde satılan standart A4 boyutundaki 4x10 (40'lı) yapışkanlı etiket kağıtlarına milimetrik uyumlu toplu barkod basım özelliği eklendi.
-
-Tablo İçi Hızlı Düzenleme (Inline Editing) & Stok: Program arayüzüne "Excel" esnekliği kazandırıldı. Kitap listesindeki herhangi bir hücreye (Stok, Barkod, Yazar, Raf, Notlar vb.) çift tıklayarak anında düzenleme yapılabilir. Değişiklikler Enter tuşuna basıldığında saniyesinde kaydedilir.
-
-Sesli Veri Girişi (Dikte) Entegrasyonu: Windows'un yerleşik yapay zeka destekli ses asistanı (Win+H) sisteme entegre edilerek, veri giriş alanlarının klavye kullanılmadan sesle doldurulabilmesi sağlandı.
-
---------------------------------------------------
-
-📚 OKA SİSTEMİNİN TEMEL ÖZELLİKLERİ VE MODÜLLERİ
-
-Kapsamlı Envanter Yönetimi: Kütüphanedeki yayınların barkod, tür, raf bilgisi, kaynak/not, stok ve durum bazlı olarak detaylı şekilde kayıt altına alınması ve profesyonelce yönetilmesi.
-
-Hızlı Ödünç ve İade İşlemleri: Barkod okuyucu desteği ile saniyeler içerisinde öğrencilere kitap tanımlama ve iade alma işlemleri. İlgili kitabın o an hangi öğrencilerde olduğunun detaylı bilgi kartlarıyla (tooltip) anlık takibi.
-
-Gelişmiş Filtreleme ve Raporlama: Envanter içerisinde çoklu kriterlere (Yazar, Yayınevi, Raf, Tür, Not/Kaynak vb.) göre hızlı arama ve anlık adet/çeşit sayımı. Geciken kitapların sınıf veya tüm okul bazlı olarak filtrelenerek PDF formatında resmi dökümünün alınması.
-
-Toplu Veri Aktarımı (Excel): Kütüphane kayıtlarının ve öğrenci listelerinin mevcut şablonlar kullanılarak Excel (XLSX) formatında toplu olarak sisteme aktarılması veya sistemden dışa aktarılması.
-
-Kota ve Süre Yönetimi: Okul politikalarına uygun olarak, öğrenci başına düşen maksimum kitap ödünç alma limitinin, varsayılan teslim süresinin ve maksimum ödünç gün sınırının parametrik olarak ayarlanabilmesi.
-
-Çevrimdışı (Offline) Çalışma Mimarisi: Sistemin temel kayıt, ödünç verme ve raporlama fonksiyonlarının internet bağlantısına veya harici bir sunucuya ihtiyaç duymadan, %100 yerel veritabanı (SQLite) üzerinden kesintisiz ve hızlı çalışabilmesi.
-
-Veri Güvenliği ve Tam Yedekleme: Tüm veritabanının (Kitaplar, Öğrenciler, Ödünç Kayıtları, Ayarlar) tek tıklama ile yerel diske yedeklenebilmesi ve olası bir veri kaybında bu yedeklerden sistemin tek tıkla tamamen geri yüklenebilmesi.
-
-Kişiselleştirilebilir ve Ergonomik Arayüz: Kullanıcı deneyimini artırmak amacıyla sisteme entegre edilen 3 farklı renk teması (Varsayılan, Açık Kitap, Klasik) ve ekran çözünürlüğüne otomatik uyum sağlayan duyarlı (responsive) pencere tasarımı.
-
-Rol Bazlı Yetkilendirme: Yönetici (Admin) ve Standart Kullanıcı ayrımları yapılarak, kritik ayarlara, yedekleme menülerine ve tüm kütüphaneyi silme işlemlerine yetkisiz (nöbetçi öğrenci vb.) erişiminin engellenmesi.
+♿ Erişilebilirlik (NVDA) ve Arayüz İyileştirmeleri
+• Diyalog Pencerelerinde NVDA Odak Desteği: Sistem tarihi uyarıları, tarih onarım onay pencereleri ve bilgilendirme mesajlarının metin içerikleri ekran okuyucu tarafından doğrudan odaklanıp seslendirilecek şekilde yapılandırıldı.
+• Rapor Tablolarında Otomatik Gezinme: Raporlar ekranında herhangi bir rapor oluşturulduğunda odak otomatik olarak sonuç tablosuna taşınıp ilk kayıt seçilerek klavye ve NVDA ile anında gezinme sağlandı.
+• Ana Panel Anlık Saat ve Tarih Güncellemesi: Ana ekran (Dashboard) açıldığı ilk milisaniyede sistem tarih ve saati anlık yüklenerek taslak etiketlerin kısa süreli görünmesi giderildi.
